@@ -1,15 +1,21 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue"
 
-// --- BANNERS (URL online, bisa dari API kamu sendiri) ---
-const banners = ref([
-  { id: 1, img: "/src/assets/image/banner1.jpg", alt: "Promo Diskon Besar" },
-  { id: 2, img: "/src/assets/image/banner2.png", alt: "Promo Diskon Besar" },
-  { id: 3, img: "/src/assets/image/banner3.jpg", alt: "Promo Diskon Besar" }, 
-  { id: 5, img: "/src/assets/image/banner5.jpg", alt: "Promo Diskon Besar" },
-  { id: 6, img: "/src/assets/image/banner6.jpg", alt: "Promo Diskon Besar" },
+// ✅ Import gambar agar Vite bisa handle saat build
+import banner1 from '@/assets/image/banner1.jpg'
+import banner2 from '@/assets/image/banner2.png'
+import banner3 from '@/assets/image/banner3.jpg'
+import banner5 from '@/assets/image/banner5.jpg'
+import banner6 from '@/assets/image/banner6.jpg'
 
-]);
+// ✅ Pakai import gambar, jangan pakai string path langsung
+const banners = ref([
+  { id: 1, img: banner1, alt: "Promo Diskon Besar" },
+  { id: 2, img: banner2, alt: "Promo Diskon Besar" },
+  { id: 3, img: banner3, alt: "Promo Diskon Besar" },
+  { id: 5, img: banner5, alt: "Promo Diskon Besar" },
+  { id: 6, img: banner6, alt: "Promo Diskon Besar" },
+])
 
 
 // --- SHORTCUTS (dummy) ---
@@ -22,11 +28,12 @@ const shortcuts = ref([
   { id: 6, label: "Perlindungan", emoji: "🛡️" },
 ])
 
-// --- PROMO BANNER (gambar online) ---
+// ✅ Promo banner juga pakai import
 const promoBanner = {
   title: "Member baru? Ini promomu!",
   desc: "Cashback sampai 99% 🎉",
-  img: "/src/assets/image/banner2.png", alt: "Promo Diskon Besar",
+  img: banner2,
+  alt: "Promo Diskon Besar",
 }
 
 // --- PRODUK dari API ---
