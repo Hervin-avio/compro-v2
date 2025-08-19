@@ -26,7 +26,7 @@
 
       <p class="text-sm text-gray-600 mt-4 text-center">
         Remember your password?
-        <a href="/login" class="text-blue-500 hover:underline">Login here</a>
+        <router-link to="/login" class="text-blue-500 hover:underline">Login here</router-link>
       </p>
     </div>
   </div>
